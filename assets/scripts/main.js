@@ -31,22 +31,28 @@ async function init() {
 }
 
 async function fetchRecipes() {
-  return new Promise((resolve, reject) => {
-    // This function is called for you up above
-    // From this function, you are going to fetch each of the recipes in the 'recipes' array above.
-    // Once you have that data, store it in the 'recipeData' object. You can use whatever you like
-    // for the keys. Once everything in the array has been successfully fetched, call the resolve(true)
-    // callback function to resolve this promise. If there's any error fetching any of the items, call
-    // the reject(false) function.
 
-    // For part 2 - note that you can fetch local files as well, so store any JSON files you'd like to fetch
-    // in the recipes folder and fetch them from there. You'll need to add their paths to the recipes array.
+  for (var i = 0; i < recipes.length; i ++) {
+    let response = await fetch(recipes[i])
+    
+    let data = await response.json()
+    console.log(data)
+    recipeData[recipes[i]] = (data)
+  }
 
-    // Part 1 Expose - TODO
-  });
+  return true
 }
 
 function createRecipeCards() {
+
+  const m = document.querySelector('main')
+
+  for (const [key, value] of Object.entries(recipeData)) {
+    var recipe = document.createElement('recipe-card')
+    recipe.data = value
+    m.appendChild(recipe)
+  }
+
   // This function is called for you up above.
   // From within this function you can access the recipe data from the JSON 
   // files with the recipeData Object above. Make sure you only display the 

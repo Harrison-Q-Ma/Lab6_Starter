@@ -1,8 +1,8 @@
 class RecipeCard extends HTMLElement {
   constructor() {
     // Part 1 Expose - TODO
-
-    // You'll want to attach the shadow DOM here
+    super()
+    this.attachShadow({mode: 'open'})
   }
 
   set data(data) {
@@ -87,6 +87,67 @@ class RecipeCard extends HTMLElement {
 
     // Here's the root element that you'll want to attach all of your other elements to
     const card = document.createElement('article');
+    const para1 = document.createElement('p')
+    const para2 = document.createElement('p')
+    const image = document.createElement('img')
+    const rating_image = document.createElement('img')
+    const rating_span1 = document.createElement('span')
+    const rating_span2 = document.createElement('span')
+    const no_review_span = document.createElement('span')
+    const title_link = document.createElement('a')
+    const rating_div = document.createElement('div')
+    const no_review_div = document.createElement('div')
+    const ingredients = document.createElement('p')
+    const time = document.createElement('time')
+    // var publisher = getOrganization(data)
+
+    time.textContent = convertTime(searchForKey(data, 'totalTime'))
+
+    ingredients.classList.add('ingredients')
+    ingredients.textContent = searchForKey(data, 'recipeIngredient')
+    title_link.setAttribute('href', getUrl(data))
+    title_link.textContent = searchForKey(data, 'headline')
+
+    para1.appendChild(title_link)
+    para2.textContent = getOrganization(data)
+    
+    rating_span1.textContent = searchForKey(data, 'ratingValue') // rating
+    rating_span2.textContent = searchForKey(data, 'ratingCount') // number of raings
+
+    para1.classList.add('title')
+    para2.classList.add('organization')
+    rating_div.classList.add('rating')
+    no_review_div.classList.add('rating')
+
+    console.log(data)
+
+    rating_div.appendChild(rating_span1)
+    rating_div.appendChild(rating_image)
+    rating_div.appendChild(rating_span2)
+    no_review_span.textContent = 'No Reviews'
+    no_review_div.appendChild(no_review_span)
+
+    var name2 = data['name']
+
+    image.setAttribute('src', searchForKey(data, 'thumbnailUrl'))
+    rating_image.setAttribute('src', '/assets/images/icons/5-star.svg')
+
+    // console.log(typeof(searchForKey(data, 'ratingCount')))
+
+    card.appendChild(image)
+    card.appendChild(para1)
+    card.appendChild(para2)
+    if ((typeof(searchForKey(data, 'ratingCount'))) == "string") {
+      card.appendChild(rating_div)
+    }
+    else {
+      card.appendChild(no_review_div)// attache empty div
+    }
+    card.appendChild(time)
+    card.appendChild(ingredients)
+
+    this.shadowRoot.appendChild(card)
+    this.shadowRoot.appendChild(styleElem)
 
     // Some functions that will be helpful here:
     //    document.createElement()
