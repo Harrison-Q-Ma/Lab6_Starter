@@ -130,7 +130,26 @@ class RecipeCard extends HTMLElement {
     var name2 = data['name']
 
     image.setAttribute('src', searchForKey(data, 'thumbnailUrl'))
-    rating_image.setAttribute('src', '/assets/images/icons/5-star.svg')
+    
+    var rating = Math.round(searchForKey(data, 'ratingValue'))
+    if (rating == 0){
+      rating_image.setAttribute('src', '/assets/images/icons/0-star.svg')
+    }
+    else if (rating == 1) {
+      rating_image.setAttribute('src', '/assets/images/icons/1-star.svg')
+    }
+    else if (rating == 2) {
+      rating_image.setAttribute('src', '/assets/images/icons/2-star.svg')
+    }
+    else if (rating == 3) {
+      rating_image.setAttribute('src', '/assets/images/icons/3-star.svg')
+    }
+    else if (rating == 4) {
+      rating_image.setAttribute('src', '/assets/images/icons/4-star.svg')
+    }
+    else if (rating == 5) {
+      rating_image.setAttribute('src', '/assets/images/icons/5-star.svg')
+    }
 
     // console.log(typeof(searchForKey(data, 'ratingCount')))
 
