@@ -119,7 +119,7 @@ class RecipeCard extends HTMLElement {
     rating_div.classList.add('rating')
     no_review_div.classList.add('rating')
 
-    console.log(data)
+    // console.log(data)
 
     rating_div.appendChild(rating_span1)
     rating_div.appendChild(rating_image)

@@ -5,7 +5,10 @@
 const recipes = [
   'https://introweb.tech/assets/json/ghostCookies.json',
   'https://introweb.tech/assets/json/birthdayCake.json',
-  'https://introweb.tech/assets/json/chocolateChip.json'
+  'https://introweb.tech/assets/json/chocolateChip.json', 
+  'assets/recipes/custom_recipe_1.txt', 
+  'assets/recipes/custom_recipe_2.txt', 
+  'assets/recipes/custom_recipe_3.txt'
 ];
 
 // Once all of the recipes that were specified above have been fetched, their
@@ -36,7 +39,7 @@ async function fetchRecipes() {
     let response = await fetch(recipes[i])
     
     let data = await response.json()
-    console.log(data)
+    // console.log(data)
     recipeData[recipes[i]] = (data)
   }
 
@@ -46,13 +49,19 @@ async function fetchRecipes() {
 function createRecipeCards() {
 
   const m = document.querySelector('main')
+  var count = 0
 
   for (const [key, value] of Object.entries(recipeData)) {
-    var recipe = document.createElement('recipe-card')
-    recipe.data = value
-    m.appendChild(recipe)
+    if (count < 3) {
+      var recipe = document.createElement('recipe-card')
+      recipe.data = value
+      m.appendChild(recipe)
+    }
+    else {
+      break; 
+    }
+    count += 1
   }
-
   // This function is called for you up above.
   // From within this function you can access the recipe data from the JSON 
   // files with the recipeData Object above. Make sure you only display the 
@@ -61,6 +70,8 @@ function createRecipeCards() {
 
   // Part 1 Expose - TODO
 }
+
+var clicked = false
 
 function bindShowMore() {
   // This function is also called for you up above.
@@ -71,4 +82,33 @@ function bindShowMore() {
   // in the recipeData object where you stored them/
 
   // Part 2 Explore - TODO
+  var button = document.querySelector('button')
+
+  button.addEventListener("click", myFunction)
+}
+
+function myFunction(){
+  var button = document.querySelector('button')
+  if (clicked == false) {
+    clicked = true
+    button.textContent = 'Show Less'
+    const m = document.querySelector('main')
+    var count = 0
+    for (const [key, value] of Object.entries(recipeData)) {
+      if (count >= 3) {
+        var recipe = document.createElement('recipe-card')
+        recipe.data = value
+        m.appendChild(recipe)
+      }
+      count += 1
+    }
+  }
+  else {
+    clicked = false
+    button.textContent = 'Show More'
+    var recipe_elems = document.querySelectorAll('recipe-card')
+    for (var i = 3; i < 6; i ++) {
+      recipe_elems[i].parentNode.removeChild(recipe_elems[i])
+    }
+  }
 }

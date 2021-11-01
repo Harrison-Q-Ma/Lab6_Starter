@@ -1,0 +1,84 @@
+{
+  "@graph": [
+    {
+      "@type": "Question",
+      "text": "What's your favorite type of cookie?",
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Sugar cookie."
+        },
+        {
+          "@type": "Answer",
+          "text": "Chocolate chip cookie."
+        }
+      ]
+    }
+  ],
+  "@context": "http://schema.org",
+  "url": "https://recipesformen.com/french-creme-brulee/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gav's Kitchen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.seriouseats.com/thmb/FeZ3yf_fxf_7ab1nM4uo1n5_q58=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__12__20121213-beef-wellington-food-lab20-2001-5afe8f69673742bab75a6cc0c970d363.jpg",
+      "width": 219, 
+      "height": 60 
+    }
+  },
+  "@type": "Recipe",
+  "author": {
+    "name": "Anonymous",
+    "@type": "Person"
+  },
+  "datePublished": "2019-08-23T00:38:05.323880Z",
+  "headline": "French Crème Brûlée Recipe",
+  "image": {
+    "@type": "ImageObject",
+    "height": 1267,
+    "thumbnail": "https://recipesformen.com/wp-content/uploads/2021/02/creme-brulee-14.jpg.webp",
+    "url": "https://recipesformen.com/french-creme-brulee/",
+    "width": 1900
+  },
+  "mainEntityOfPage": {
+    "@id": "https://www.delish.com/holiday-recipes/halloween/a28637917/ghost-cookies-recipe/",
+    "@type": "WebPage"
+  },
+  "thumbnailUrl": "https://recipesformen.com/wp-content/uploads/2021/02/creme-brulee-14.jpg.webp",
+  "isAccessibleForFree": "False",
+  "hasPart": [
+    {
+      "@type": "WebPageElement",
+      "isAccessibleForFree": "False",
+      "cssSelector": ".content-container"
+    }
+  ],
+  "name": "Spooky Ghost Cookies",
+  "prepTime": "PT10M",
+  "cookTime": "PT0S",
+  "totalTime": "PT180M",
+  "recipeIngredient": [
+    "Egg yolks", "Caster sugar", "Granulated Sugar", "Vanilla extract", "Heavy cream"
+  ],
+  "recipeInstructions": "In a large bowl, whisk together flour, baking powder, and salt.&nbsp; In another large bowl, beat butter and sugar together. Add egg, milk, and vanilla and beat until combined, then add flour mixture gradually until just combined. Shape into a disk and wrap in plastic. Refrigerate 1 hour. When ready to roll, preheat oven to 350\u00ba and line two large baking sheets with parchment.&nbsp;Lightly flour a clean work surface and roll out dough until 1/8\u201d thick. Using a ghost cookie cutter, cut out cookies. Re-roll scraps and cut out more cookies.&nbsp;Transfer to prepared baking sheets and freeze for 10 minutes. Bake until edges are lightly golden, 8 to 10 minutes. Place on a wire cooling rack and let cool completely.&nbsp; Meanwhile, make icing:&nbsp;In a medium bowl, combine powdered sugar, corn syrup, milk, and almond extract.&nbsp; Place about 1/4 of icing into a small bowl and dye black with black food coloring.&nbsp; Place about half the&nbsp;white icing in a piping bag fitted with a small round tip and pipe edges around cookies.&nbsp;&nbsp; Thin remaining white icing by adding 1 teaspoon milk at a time until icing runs easily on cookies, but isn't water thin. Place icing in another piping bag with a small round tip and fill in centers of cookies. Use a toothpick to pop any air bubbles and to spread icing to help fill any gaps. Let cookies dry until icing is set, 15 minutes.&nbsp; Place black icing in a piping bag with a small round tip and pipe eyes and mouths onto cookies.&nbsp;",
+  "video": {
+    "@type": "VideoObject",
+    "contentUrl": "https://streaming.hearstdigitalstudios.com/bd452b54-dc1f-4f06-b139-feb518142277/video_rover_16x9_1080p_hd_1574691121_26638.mp4",
+    "description": "Decorating sugar cookies is much easier than you think. Two different types of icings, a buttercream and a royal icing will give you beautiful results.",
+    "duration": "PT3M",
+    "embedUrl": "https://glimmer.hearstapps.com/?id=5d02b073-887b-437a-9bff-c461000753dd",
+    "name": "Decorate Sugar Cookies Like A Pro This Holiday Season",
+    "thumbnailUrl": "https://hips.hearstapps.com/hmg-prod/images/delish-sugar-cookies-048-1541789899.jpg",
+    "uploadDate": "2018-12-11T14:27:03.526517Z"
+  },
+  "recipeCuisine": [],
+  "recipeCategory": [
+    "cocktail party",
+    "dinner party",
+    "Halloween",
+    "dessert"
+  ],
+  "recipeYield": "24",
+  "description": "These Ghost Cookies will be the cutest and spookiest part of your Halloween spread."
+}
